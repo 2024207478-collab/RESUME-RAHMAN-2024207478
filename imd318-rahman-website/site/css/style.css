@@ -1,0 +1,712 @@
+/* =====================================================================
+   style.css  |  decides how the website LOOKS: colours, fonts, sizes, layout and movement
+   Author: Abdul Rahman bin Mohd Yusuf (IMD318 individual project)
+
+   How to read this file:
+     - A rule looks like   name { property: value; }
+       Example:  color: red;  makes the text red.
+     - Every group of rules has a short comment above it that says, in
+       simple words, what that part of the website does.
+
+   Main parts, in order:
+     1. Colour list and the blue desk behind the page
+     2. The wooden clipboard and its clip
+     3. The menu at the top
+     4. The grid paper, headings and links
+     5. Home page: ID card and clickable desk
+     6. Tables, lists, photos and sticky notes
+     7. Buttons, footer and the search box
+     8. Phones and small screens
+     9. Dropdown photos, social logos, hobby boxes and desk movement
+   ===================================================================== */
+
+/* COLOUR LIST: the main colours are saved here once and used everywhere. Change a colour here and it changes on every page */
+:root {
+  --blue: #1f5fbf;
+  --ink: #1d2433;
+  --wood: #b9824f;
+  --pink: #e0338a;
+  --sun: #ffd84d;
+  font-size: 16px;
+}
+
+/* SIZES: makes every box count its border and inner space, so the layout does not jump around */
+* {
+  box-sizing: border-box;
+}
+
+/* THE DESK BEHIND THE PAGE: blue background with white lines like a cutting mat, plus the main font and text colour */
+body {
+  margin: 0;
+  padding: 24px 12px;
+  font-family: Poppins,Arial,sans-serif;
+  color: var(--ink);
+  line-height: 1.6;
+  background-color: var(--blue);
+  background-image: linear-gradient(rgba(255,255,255,.28) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.28) 2px,transparent 2px);
+  background-size: 48px 48px;
+}
+
+/* SKIP LINK: stays hidden until someone presses the Tab key on the keyboard */
+.skip {
+  position: absolute;
+  left: -999px;
+}
+
+.skip:focus {
+  left: 8px;
+  top: 8px;
+  background: #fff;
+  padding: 6px;
+  z-index: 9;
+}
+
+/* THE WOODEN CLIPBOARD: the brown board that holds the whole page */
+.board {
+  position: relative;
+  max-width: 980px;
+  margin: 34px auto;
+  padding: 34px 22px 18px;
+  border-radius: 22px;
+  background: linear-gradient(90deg,#c48d58,#a8723f 40%,#bf8651);
+  box-shadow: 0 14px 30px rgba(0,0,0,.45);
+}
+
+/* THE SILVER CLIP at the top of the board. It wobbles slowly */
+.clip {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  width: 120px;
+  height: 46px;
+  margin-left: -60px;
+  border-radius: 8px;
+  background: linear-gradient(#e9e9e9,#8d8d8d);
+  box-shadow: 0 4px 8px rgba(0,0,0,.4);
+  animation: wobble 4s ease-in-out infinite;
+}
+
+/* CLIP MOVEMENT: tilts a little to the left, then a little to the right */
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotate(-1deg);
+  }
+
+  50% {
+    transform: rotate(1deg);
+  }
+
+}
+
+/* TOP BAR: the menu on the left, the clock and text buttons on the right */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+/* MENU: puts the menu buttons in a row */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* MENU BUTTONS: look like coloured sticky tabs and lift up when you point at them */
+.tab {
+  font: 700 .8rem Silkscreen,monospace;
+  padding: 7px 12px;
+  border-radius: 6px 6px 2px 2px;
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 2px 3px 0 rgba(0,0,0,.3);
+  transition: transform .15s;
+}
+
+.tab:hover,
+.tab:focus {
+  transform: translateY(-3px);
+}
+
+/* The button of the page you are on gets a dark outline */
+.tab.on {
+  outline: 3px solid var(--ink);
+}
+
+/* COLOURS OF THE MENU BUTTONS: each button has its own colour */
+.t0 {
+  background: #8ee6a5;
+}
+
+.t1 {
+  background: #a9b8ff;
+}
+
+.t2 {
+  background: #ffe27a;
+}
+
+.t3 {
+  background: #ffb3d1;
+}
+
+.t4 {
+  background: #ffc999;
+}
+
+.t5 {
+  background: #9be3f2;
+}
+
+.t6 {
+  background: #e3e3e3;
+}
+
+/* CLOCK AND TEXT SIZE BUTTONS (A- and A+) */
+.tools {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  color: #fff;
+  font: 700 .85rem Silkscreen,monospace;
+}
+
+.tools button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 6px;
+  padding: 5px 9px;
+  font-weight: 700;
+}
+
+/* THE GRID PAPER: the white page with light blue squares where the content sits */
+.paper {
+  background-color: #fbfbf7;
+  padding: 26px 28px 34px;
+  border-radius: 6px;
+  min-height: 420px;
+  background-image: linear-gradient(#d6e0ee 1px,transparent 1px),linear-gradient(90deg,#d6e0ee 1px,transparent 1px);
+  background-size: 22px 22px;
+  box-shadow: 0 3px 8px rgba(0,0,0,.3);
+}
+
+/* BIG HEADINGS: the space around them */
+h1 {
+  margin: .2em 0 .5em;
+}
+
+/* PIXEL LETTERS used for the page titles (blue with a light shadow) */
+.pixel {
+  font: 700 2.4rem Silkscreen,monospace;
+  color: #1d64d8;
+  text-shadow: 3px 3px 0 #bcd6ff;
+}
+
+/* HANDWRITING STYLE used for the words "Hi, I'm" */
+.script {
+  font: 600 2rem Caveat,cursive;
+  color: #3a8bd9;
+}
+
+/* SMALL HEADINGS: each one has a pink line on the left */
+h2 {
+  font: 600 1.15rem Poppins;
+  border-left: 6px solid var(--pink);
+  padding-left: 10px;
+  margin-top: 1.6em;
+}
+
+/* LINKS: the colour of the links */
+a {
+  color: #1d4fb0;
+}
+
+/* YELLOW BOX for tips and hints */
+.note {
+  background: #fff7c2;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* THE ID CARD on the Home page: white card with my photo, slightly tilted */
+.idcard {
+  float: right;
+  width: 190px;
+  margin: 0 0 12px 18px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 5px 12px rgba(0,0,0,.3);
+  transform: rotate(3deg);
+}
+
+.idcard img {
+  border-radius: 10px;
+  background: #dfe6f3;
+  object-fit: cover;
+}
+
+/* The small text under the ID card photo */
+.lanyard {
+  font-size: .8rem;
+  margin: .4em 0 0;
+}
+
+/* Makes the site map picture fit on small screens */
+.map {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 12px auto;
+}
+
+/* TABLES: white background, blue borders and a soft shadow */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fff;
+  margin: 14px 0;
+  box-shadow: 3px 3px 0 rgba(0,0,0,.15);
+}
+
+/* The title of a table in handwriting style */
+caption {
+  font: 600 .95rem Caveat,cursive;
+  font-size: 1.3rem;
+  text-align: left;
+  padding: 4px;
+}
+
+th,
+td {
+  border: 2px solid #aac0e8;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+th {
+  background: #e7efff;
+}
+
+/* The yellow top row of the Biodata table */
+.hd {
+  background: var(--sun);
+  text-align: center;
+  font-family: Silkscreen,monospace;
+}
+
+tbody tr:nth-child(even) td {
+  background: #f7faff;
+}
+
+/* YELLOW HIGHLIGHT, like a highlighter pen */
+mark {
+  background: #ffe27a;
+  padding: 0 5px;
+}
+
+/* DARK BOX with green letters (used for the school path drawing) */
+pre {
+  background: #1d2433;
+  color: #8ef0b0;
+  padding: 12px;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+/* SCHOOL PATH LIST: hides the normal numbers and draws pink round numbers instead */
+.path {
+  counter-reset: s;
+  list-style: none;
+  padding-left: 0;
+}
+
+.path li {
+  position: relative;
+  padding: 8px 12px 8px 54px;
+  margin: 10px 0;
+  background: #fff;
+  border-left: 6px solid var(--sun);
+}
+
+.path li::before {
+  counter-increment: s;
+  content: counter(s);
+  position: absolute;
+  left: 10px;
+  top: 6px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: #fff;
+  text-align: center;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+/* CUSTOM BULLETS: a star or a heart is used instead of a normal dot */
+.star {
+  list-style: "\2605  ";
+}
+
+.heart {
+  list-style: "\2665  ";
+}
+
+.heart li::marker,
+.star li::marker {
+  color: var(--pink);
+}
+
+/* STICKY NOTES: yellow notes that are slightly tilted */
+.sticky {
+  background: #ffe97a;
+  padding: 12px 18px;
+  max-width: 480px;
+  transform: rotate(-1.5deg);
+  box-shadow: 4px 6px 10px rgba(0,0,0,.25);
+}
+
+.sticky h2 {
+  border: 0;
+  margin: .2em 0;
+}
+
+.plat td {
+  vertical-align: middle;
+}
+
+.plat img {
+  display: block;
+}
+
+/* PHOTOS: make sure a photo never goes outside the page */
+figure {
+  margin: 12px 0;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* PHOTO FRAME: white border, shadow and a small tilt, like a printed photo */
+.polaroid {
+  display: inline-block;
+  margin: 10px 14px 18px 0;
+  padding: 10px 10px 8px;
+  background: #fff;
+  box-shadow: 3px 5px 10px rgba(0,0,0,.3);
+  transform: rotate(-2deg);
+  vertical-align: top;
+}
+
+.polaroid:nth-of-type(even) {
+  transform: rotate(2deg);
+}
+
+.polaroid figcaption,
+figcaption {
+  font: 600 1.15rem Caveat,cursive;
+  text-align: center;
+}
+
+/* MISSING PHOTO BOX: the striped box shown when a photo file has not been added yet */
+.ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(45deg,#e8eefb,#e8eefb 10px,#f6f9ff 10px,#f6f9ff 20px);
+  color: #52627f;
+  font-size: .8rem;
+  text-align: center;
+  border: 2px dashed #8fa7d6;
+  padding: 6px;
+}
+
+/* Makes the video fit inside the page */
+video {
+  max-width: 100%;
+}
+
+/* BACK AND NEXT BUTTONS: the row they sit in */
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+/* THE YELLOW BUTTONS: look 3D and press down when you point at them */
+.btn {
+  font: 700 .95rem Silkscreen,monospace;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: var(--sun);
+  box-shadow: 0 5px 0 #b38e00;
+  transition: transform .1s,box-shadow .1s;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #b38e00;
+}
+
+/* The Back button is grey */
+.back {
+  background: #e3e3e3;
+  box-shadow: 0 5px 0 #8d8d8d;
+}
+
+/* BOTTOM TEXT BOX with the ownership statement */
+footer {
+  background: rgba(255,255,255,.88);
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: .78rem;
+}
+
+/* SEARCH BOX on the Site Map page */
+input[type=search] {
+  padding: 6px 10px;
+  border: 2px solid #aac0e8;
+  border-radius: 6px;
+}
+
+/* PHONES AND SMALL SCREENS: changes some sizes so everything still fits */
+@media(max-width:640px) {
+  .idcard {
+    float: none;
+    margin: 0 auto 14px;
+  }
+
+  .pixel {
+    font-size: 1.7rem;
+  }
+
+  .paper {
+    padding: 18px 14px;
+  }
+
+}
+
+/* DROPDOWN PHOTOS on the Education page (the yellow button and the photo that opens below it) */
+.dd {
+  margin-top: 8px;
+}
+
+.dd summary {
+  display: inline-block;
+  cursor: pointer;
+  font: 700 .75rem Silkscreen,monospace;
+  background: var(--sun);
+  padding: 6px 12px;
+  border-radius: 6px;
+  box-shadow: 0 3px 0 #b38e00;
+  list-style: none;
+}
+
+.dd summary::-webkit-details-marker {
+  display: none;
+}
+
+.dd summary::after {
+  content: " \25BC";
+}
+
+.dd[open] summary::after {
+  content: " \25B2";
+}
+
+.dd img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border: 6px solid #fff;
+  box-shadow: 3px 5px 10px rgba(0,0,0,.3);
+  animation: drop .35s ease;
+}
+
+.dd .ph {
+  margin-top: 10px;
+}
+
+/* DROPDOWN MOVEMENT: the photo slides down a little when it opens */
+@keyframes drop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+/* The internship note is blue */
+.intern {
+  background: #bfe3f7;
+  transform: rotate(1.2deg);
+  margin-bottom: 22px;
+}
+
+/* INSTAGRAM AND TIKTOK LOGOS: they grow a little when you point at them */
+.social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: .4em 0;
+}
+
+.social img {
+  display: block;
+  border-radius: 10px;
+  transition: transform .15s;
+}
+
+.social a:hover img,
+.social a:focus img {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* EXPERIENCE PAGE: the note and its photo side by side (the photo only shows after the note is clicked) */
+.exp-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+
+.exp-row .sticky {
+  flex: 0 1 480px;
+  margin: 0;
+  cursor: pointer;
+  transition: transform .15s;
+}
+
+.exp-row .sticky:hover,
+.exp-row .sticky:focus {
+  transform: rotate(0) scale(1.02);
+  outline: 3px solid var(--pink);
+}
+
+.exp-photo {
+  display: none;
+  margin: 0;
+}
+
+.exp-row.open .exp-photo {
+  display: block;
+  padding: 10px 10px 6px;
+  background: #fff;
+  box-shadow: 3px 5px 10px rgba(0,0,0,.3);
+  transform: rotate(2deg);
+  animation: drop .35s ease;
+}
+
+/* HOBBY BOXES: arranged in a grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 16px;
+}
+
+/* ONE HOBBY BOX: white box with a coloured top */
+.card {
+  background: #fff;
+  border-top: 8px solid var(--sun);
+  padding: 6px 16px 12px;
+  box-shadow: 3px 4px 8px rgba(0,0,0,.2);
+  transform: rotate(-.8deg);
+}
+
+.card:nth-child(even) {
+  transform: rotate(.8deg);
+  border-top-color: var(--pink);
+}
+
+.card h3 {
+  font: 600 1.05rem Poppins;
+  margin: .7em 0 .3em;
+}
+
+/* GAME LOGOS on the Skills and Hobbies page */
+.logos {
+  display: flex;
+  gap: 10px;
+}
+
+.logos img {
+  border-radius: 12px;
+}
+
+/* THE CLICKABLE DESK on the Home page */
+.desk {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 12px auto;
+  border-radius: 14px;
+}
+
+/* DESK OBJECTS: each object bounces when you point at it, use the keyboard on it, or press it */
+.obj {
+  cursor: pointer;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: filter .2s;
+}
+
+.obj:hover,
+.obj:focus {
+  animation: bob .7s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px #fff);
+  outline: none;
+}
+
+.obj:active {
+  animation: none;
+  transform: scale(.92);
+}
+
+/* BOUNCE MOVEMENT of the desk objects */
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  30% {
+    transform: translateY(-9px) rotate(-3deg) scale(1.06);
+  }
+
+  70% {
+    transform: translateY(-4px) rotate(3deg) scale(1.06);
+  }
+
+}
+
+/* FOR PEOPLE WHO TURN OFF ANIMATION on their device: objects only grow a little instead of bouncing */
+@media (prefers-reduced-motion:reduce) {
+  .obj:hover,
+  .obj:focus {
+    animation: none;
+    transform: scale(1.08);
+  }
+
+}

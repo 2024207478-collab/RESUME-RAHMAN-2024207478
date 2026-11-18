@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300" font-family="Arial,sans-serif" font-size="13" font-weight="700">
+<defs>
+<linearGradient id="wood" x1="0" x2="1"><stop offset="0" stop-color="#d9a56d"/><stop offset=".5" stop-color="#c58d55"/><stop offset="1" stop-color="#d4a068"/></linearGradient>
+<linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1f1f1"/><stop offset="1" stop-color="#8b8b8b"/></linearGradient>
+<linearGradient id="bag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8a5b"/><stop offset="1" stop-color="#e5532d"/></linearGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="3" dy="5" stdDeviation="4" flood-opacity=".35"/></filter>
+</defs>
+<rect width="600" height="300" rx="14" fill="url(#wood)"/>
+<g stroke="#a9763f" stroke-opacity=".35" stroke-width="2"><path d="M0 60H600M0 130H600M0 200H600M0 270H600"/></g>
+<!-- Clipboard = Biodata -->
+<g filter="url(#sh)"><rect x="30" y="40" width="160" height="220" rx="12" fill="#9b6a3a" stroke="#6f4824" stroke-width="3"/>
+<rect x="46" y="64" width="128" height="184" rx="4" fill="#fffef8"/>
+<g stroke="#c9d6ea" stroke-width="2"><path d="M58 150H162M58 170H162M58 190H162M58 210H140"/></g>
+<circle cx="82" cy="104" r="20" fill="#7aa7e8"/><circle cx="82" cy="98" r="8" fill="#fff"/><path d="M68 118q14-14 28 0z" fill="#fff"/>
+<path d="M112 92h46M112 106h38M112 120h44" stroke="#1d2433" stroke-width="4" stroke-linecap="round"/>
+<rect x="76" y="30" width="68" height="28" rx="7" fill="url(#metal)" stroke="#666"/><rect x="96" y="22" width="28" height="14" rx="5" fill="#777"/></g>
+<rect x="62" y="226" width="96" height="26" rx="5" fill="#ffe27a"/><text x="110" y="244" text-anchor="middle" fill="#1d2433">Biodata</text>
+<!-- Notebook with cap = Education -->
+<g filter="url(#sh)" transform="rotate(-4 270 210)"><rect x="212" y="150" width="118" height="120" rx="8" fill="#2f6fd6"/>
+<rect x="222" y="158" width="100" height="104" rx="4" fill="#fff"/>
+<g fill="#1b3f86"><circle cx="222" cy="172" r="4"/><circle cx="222" cy="192" r="4"/><circle cx="222" cy="212" r="4"/><circle cx="222" cy="232" r="4"/></g>
+<polygon points="272,168 306,182 272,196 238,182" fill="#1d2433"/><path d="M252 189v12q20 10 40 0v-12l-20 8z" fill="#3b4660"/><path d="M306 182v18" stroke="#ffd84d" stroke-width="3"/>
+<g stroke="#c9d6ea" stroke-width="2"><path d="M238 216H306M238 232H292"/></g></g>
+<rect x="238" y="246" width="86" height="22" rx="5" fill="#ffe27a" transform="rotate(-4 270 210)"/><text x="281" y="262" text-anchor="middle" fill="#1d2433" transform="rotate(-4 270 210)">Education</text>
+<!-- Delivery bag = Experience -->
+<g filter="url(#sh)"><path d="M370 178q25-34 50 0" fill="none" stroke="#7a2d12" stroke-width="7" stroke-linecap="round"/>
+<rect x="350" y="176" width="90" height="72" rx="14" fill="url(#bag)"/><rect x="350" y="176" width="90" height="20" rx="10" fill="#c2411b"/>
+<path d="M376 214l9-12h20l9 12v14h-38z" fill="#fff" opacity=".92"/><circle cx="395" cy="222" r="5" fill="#e5532d"/></g>
+<rect x="356" y="250" width="78" height="22" rx="5" fill="#ffe27a"/><text x="395" y="266" text-anchor="middle" fill="#1d2433">Experience</text>
+<!-- Photo frame = Family -->
+<g filter="url(#sh)"><rect x="350" y="30" width="120" height="80" rx="4" fill="#5b3a1e"/><rect x="360" y="40" width="100" height="60" fill="#bfe3f7"/>
+<g fill="#2f6fd6"><circle cx="390" cy="62" r="7"/><path d="M378 92q12-24 24 0z"/></g><g fill="#e0338a"><circle cx="410" cy="68" r="6"/><path d="M399 92q11-20 22 0z"/></g><g fill="#2e9e5b"><circle cx="430" cy="64" r="7"/><path d="M418 92q12-24 24 0z"/></g></g>
+<text x="410" y="127" text-anchor="middle" fill="#fff">Family</text>
+<!-- Camera = Gallery -->
+<g filter="url(#sh)"><rect x="490" y="68" width="100" height="68" rx="10" fill="#2b2f3a"/><rect x="490" y="68" width="100" height="22" rx="8" fill="#c9ccd4"/><rect x="506" y="58" width="26" height="14" rx="3" fill="#8d919b"/>
+<circle cx="540" cy="108" r="24" fill="#dfe3ea"/><circle cx="540" cy="108" r="17" fill="#1b1f2a"/><circle cx="540" cy="108" r="9" fill="#3a76d8"/><circle cx="535" cy="103" r="3" fill="#fff" opacity=".8"/><circle cx="574" cy="80" r="4" fill="#ff5a5a"/></g>
+<text x="540" y="156" text-anchor="middle" fill="#fff">Gallery</text>
+<!-- Laptop = Skills &amp; Hobbies -->
+<g filter="url(#sh)"><rect x="488" y="168" width="84" height="56" rx="6" fill="#2b2f3a"/><rect x="494" y="174" width="72" height="44" rx="3" fill="#0f172a"/><text x="530" y="203" text-anchor="middle" fill="#7cffb2" font-size="16">&lt;/&gt;</text><path d="M478 226h104l6 12H472z" fill="#c9ccd4"/><rect x="520" y="229" width="20" height="3" fill="#8d919b"/></g>
+<rect x="470" y="246" width="120" height="22" rx="5" fill="#ffe27a"/><text x="530" y="262" text-anchor="middle" fill="#1d2433">Skills &amp; Hobbies</text>
+</svg>

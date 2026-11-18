@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--
+  PAGE: Family   (file name: family.html)
+  What this page is for: my family photo and family members.
+  How to read this file: every big part has a short comment above it that says, in simple words, what that part does.
+  The colours and layout are in css/style.css. The parts that move or react are in js/script.js.
+-->
+
+<html lang="en">
+
+  <!-- THE HIDDEN PART: information for the browser such as page name, fonts and the style file. Visitors do not see this part directly -->
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Abdul Rahman bin Mohd Yusuf">
+
+    <!-- PAGE NAME: the words shown on the browser tab. Every page has its own name -->
+
+    <title>Family | Abdul Rahman bin Mohd Yusuf | Creative Desk &amp; Clipboard</title>
+
+    <!-- FONTS: gets the nice writing styles from Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@400;600&family=Silkscreen:wght@700&display=swap" rel="stylesheet">
+
+    <!-- STYLE FILE: connects this page to css/style.css, which decides the colours, fonts and layout -->
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <!-- THE VISIBLE PART: everything people see on the screen -->
+
+  <body>
+
+    <!-- SKIP LINK: hidden link for people who use a keyboard or screen reader. It jumps straight to the main content -->
+
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- THE CLIPBOARD: the brown wooden board that holds the whole page -->
+
+    <div class="board">
+
+      <!-- THE CLIP: the silver clip at the top of the board (decoration only) -->
+
+      <span class="clip" aria-hidden="true"></span>
+
+      <!-- TOP PART: the menu to go to other pages, a clock, and buttons to make the writing bigger or smaller -->
+
+      <header>
+
+        <!-- MENU: one button for each page. The highlighted button is the page you are on now -->
+
+        <nav aria-label="Main navigation">
+          <a class="tab t0" href="index.html">Home</a>
+          <a class="tab t1" href="biodata.html">Biodata</a>
+          <a class="tab t2" href="education.html">Education</a>
+          <a class="tab t3" href="experience.html">Experience</a>
+          <a class="tab t7" href="skills.html">Skills &amp; Hobbies</a>
+          <a class="tab t4 on" href="family.html">Family</a>
+          <a class="tab t5" href="gallery.html">Gallery</a>
+          <a class="tab t6" href="sitemap.html">Site Map</a>
+        </nav>
+
+        <!-- CLOCK AND TEXT SIZE: A- makes the writing smaller and A+ makes it bigger -->
+
+        <div class="tools">
+          <span id="clock" aria-live="off"></span>
+          <button type="button" id="smaller" title="Smaller text">A-</button>
+          <button type="button" id="bigger" title="Larger text">A+</button>
+        </div>
+      </header>
+
+      <!-- MAIN PART: the information that belongs only to this page -->
+
+      <main id="main" class="paper">
+
+        <!-- PAGE TITLE: the big heading at the top of this page -->
+
+        <h1 id="top" class="pixel">Family</h1>
+
+        <!-- FAMILY PHOTO: picture with a short caption underneath (save it as images/family.jpg) -->
+
+        <figure>
+          <img data-ph="family" src="images/family.jpg" alt="Photo of my family together" width="520" height="320">
+          <figcaption>My family. They are my reason to keep going.</figcaption>
+        </figure>
+
+        <!-- NEW PART: the people in my family -->
+
+        <h2>Who is in my family</h2>
+
+        <!-- FAMILY LIST: each person has a heart. The sisters are numbered inside the list -->
+
+        <ul class="heart">
+          <li><strong>Mother:</strong> Anita</li>
+          <li>
+            <strong>Younger sisters:</strong>
+
+            <!-- NUMBERED LIST: my sisters -->
+
+            <ol>
+              <li>Balqis</li>
+              <li>Najwa</li>
+            </ol>
+          </li>
+        </ul>
+      </main>
+
+      <!-- BACK AND NEXT BUTTONS: press to go to the page before or after this one -->
+
+      <div class="pager">
+        <a class="btn back" href="skills.html">&larr; Skills &amp; Hobbies</a>
+        <a class="btn next" href="gallery.html">Next: Gallery &rarr;</a>
+      </div>
+
+      <!-- BOTTOM PART: shows who owns this website, my social media links and the dates -->
+
+      <footer>
+
+        <!-- OWNERSHIP STATEMENT: says this website is my own work (every page needs this) -->
+
+        <p>&copy; 2026 <strong>Abdul Rahman bin Mohd Yusuf</strong> &ndash; Diploma in <abbr title="Information Management">Information Management</abbr>, <abbr title="Universiti Teknologi MARA">UiTM</abbr> Segamat. This website is my own individual project for IMD318 and I am responsible for its content.</p>
+
+        <!-- SOCIAL MEDIA: press the Instagram or TikTok logo to open my account (change your_username to my real username in this part) -->
+
+        <p class="social">
+          <span>Follow me:</span>
+          <a href="https://www.instagram.com/manftx_" target="_blank" rel="noopener" aria-label="My Instagram"><img src="images/instagram.png" data-fallback="images/instagram.svg" alt="Instagram logo" width="36" height="36"></a>
+          <a href="https://www.tiktok.com/@manftx" target="_blank" rel="noopener" aria-label="My TikTok"><img src="images/tiktok.png" data-fallback="images/tiktok.svg" alt="TikTok logo" width="36" height="36"></a>
+        </p>
+
+        <!-- DATES: when this page was made and when it was last changed -->
+
+        <p>Created: 11 November 2026 &nbsp;|&nbsp; Last updated: 11 November 2026</p>
+      </footer>
+    </div>
+
+    <!-- SMALL PROGRAM: makes the clock, text size buttons, search and clicking photos work (js/script.js) -->
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
+

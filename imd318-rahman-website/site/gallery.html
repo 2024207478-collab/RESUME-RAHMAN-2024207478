@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--
+  PAGE: Gallery   (file name: gallery.html)
+  What this page is for: my photos, video and sound.
+  How to read this file: every big part has a short comment above it that says, in simple words, what that part does.
+  The colours and layout are in css/style.css. The parts that move or react are in js/script.js.
+-->
+
+<html lang="en">
+
+  <!-- THE HIDDEN PART: information for the browser such as page name, fonts and the style file. Visitors do not see this part directly -->
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Abdul Rahman bin Mohd Yusuf">
+
+    <!-- PAGE NAME: the words shown on the browser tab. Every page has its own name -->
+
+    <title>Gallery | Abdul Rahman bin Mohd Yusuf | Creative Desk &amp; Clipboard</title>
+
+    <!-- FONTS: gets the nice writing styles from Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@400;600&family=Silkscreen:wght@700&display=swap" rel="stylesheet">
+
+    <!-- STYLE FILE: connects this page to css/style.css, which decides the colours, fonts and layout -->
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <!-- THE VISIBLE PART: everything people see on the screen -->
+
+  <body>
+
+    <!-- SKIP LINK: hidden link for people who use a keyboard or screen reader. It jumps straight to the main content -->
+
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- THE CLIPBOARD: the brown wooden board that holds the whole page -->
+
+    <div class="board">
+
+      <!-- THE CLIP: the silver clip at the top of the board (decoration only) -->
+
+      <span class="clip" aria-hidden="true"></span>
+
+      <!-- TOP PART: the menu to go to other pages, a clock, and buttons to make the writing bigger or smaller -->
+      <header>
+        <!-- MENU: one button for each page. The highlighted button is the page you are on now -->
+
+        <nav aria-label="Main navigation">
+          <a class="tab t0" href="index.html">Home</a>
+          <a class="tab t1" href="biodata.html">Biodata</a>
+          <a class="tab t2" href="education.html">Education</a>
+          <a class="tab t3" href="experience.html">Experience</a>
+          <a class="tab t7" href="skills.html">Skills &amp; Hobbies</a>
+          <a class="tab t4" href="family.html">Family</a>
+          <a class="tab t5 on" href="gallery.html">Gallery</a>
+          <a class="tab t6" href="sitemap.html">Site Map</a>
+        </nav>}
+
+        <!-- CLOCK AND TEXT SIZE: A- makes the writing smaller and A+ makes it bigger -->
+
+        <div class="tools">
+          <span id="clock" aria-live="off"></span>
+          <button type="button" id="smaller" title="Smaller text">A-</button>
+          <button type="button" id="bigger" title="Larger text">A+</button>
+        </div>
+      </header>
+
+      <!-- MAIN PART: the information that belongs only to this page -->
+
+      <main id="main" class="paper">
+
+        <!-- PAGE TITLE: the big heading at the top of this page -->
+
+        <h1 id="top" class="pixel">Gallery</h1>
+
+        <!-- JUMP LINKS: press a word to go straight to that part of this page -->
+
+        <p class="note">Jump to: <a href="#family-photo">Family</a> | <a href="#work-photo">At work</a> | <a href="#me">About me</a> | <a href="#media">Video &amp; sound</a></p>
+
+        <!-- FAMILY PART: a family photo -->
+
+        <section id="family-photo">
+          <h2>Family</h2>
+
+          <!-- PHOTO FRAME: a photo with a white border and a short caption, like a printed photo -->
+
+          <figure class="polaroid">
+            <img data-ph="family" src="images/family.jpg" alt="My whole family in one photo" width="480" height="300">
+            <figcaption>All of us together</figcaption>
+          </figure>
+        </section>
+
+        <!-- WORK PART: a photo of me working -->
+
+        <section id="work-photo">
+          <h2>At work</h2>
+          <figure class="polaroid">
+            <img data-ph="work" src="images/work.jpg" alt="Me working as a delivery rider" width="300" height="300">
+            <figcaption>On the road</figcaption>
+          </figure>
+        </section>
+
+        <!-- ABOUT ME PART: my selfie and casual photos -->
+
+        <section id="me">
+          <h2>About me</h2>
+          <figure class="polaroid">
+            <img data-ph="selfie" src="images/selfie.jpg" alt="My selfie" width="240" height="300">
+            <figcaption>Selfie</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img data-ph="informal1" src="images/informal1.jpg" alt="Informal photo of me" width="240" height="300">
+            <figcaption>Casual day</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img data-ph="informal2" src="images/informal2.jpg" alt="Another informal photo of me" width="240" height="300">
+            <figcaption>Relaxing</figcaption>
+          </figure>
+        </section>
+
+        <!-- VIDEO AND SOUND PART -->
+
+        <section id="media">
+          <h2>Video and sound</h2>
+
+          <!-- VIDEO: my short video. Put the file in the media folder and name it intro.mp4 -->
+
+          <video controls width="420" preload="none" poster="images/video-poster.svg"><source src="media/intro.mp4" type="video/mp4">Your browser does not support video.</video>
+          <p>
+
+            <!-- SOUND: music or my voice with a play button. Put the file in the media folder and name it theme.mp3 -->
+
+            <audio controls preload="none"><source src="media/theme.mp3" type="audio/mpeg">Your browser does not support audio.</audio>
+          </p>
+        </section>
+      </main>
+
+      <!-- BACK AND NEXT BUTTONS: press to go to the page before or after this one -->
+
+      <div class="pager">
+        <a class="btn back" href="family.html">&larr; Family</a>
+        <a class="btn next" href="sitemap.html">Next: Site Map &rarr;</a>
+      </div>
+
+      <!-- BOTTOM PART: shows who owns this website, my social media links and the dates -->
+
+      <footer>
+
+        <!-- OWNERSHIP STATEMENT: says this website is my own work (every page needs this) -->
+
+        <p>&copy; 2026 <strong>Abdul Rahman bin Mohd Yusuf</strong> &ndash; Diploma in <abbr title="Information Management">Information Management</abbr>, <abbr title="Universiti Teknologi MARA">UiTM</abbr> Segamat. This website is my own individual project for IMD318 and I am responsible for its content.</p>
+
+        <!-- SOCIAL MEDIA: press the Instagram or TikTok logo to open my account (change your_username to my real username in this part) -->
+
+        <p class="social">
+          <span>Follow me:</span>
+          <a href="https://www.instagram.com/manftx_" target="_blank" rel="noopener" aria-label="My Instagram"><img src="images/instagram.png" data-fallback="images/instagram.svg" alt="Instagram logo" width="36" height="36"></a>
+          <a href="https://www.tiktok.com/@manftx" target="_blank" rel="noopener" aria-label="My TikTok"><img src="images/tiktok.png" data-fallback="images/tiktok.svg" alt="TikTok logo" width="36" height="36"></a>
+        </p>
+
+        <!-- DATES: when this page was made and when it was last changed -->
+
+        <p>Created: 11 November 2026 &nbsp;|&nbsp; Last updated: 11 November 2026</p>
+      </footer>
+    </div>
+
+    <!-- SMALL PROGRAM: makes the clock, text size buttons, search and clicking photos work (js/script.js) -->
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
+
